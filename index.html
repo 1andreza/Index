@@ -3,8 +3,8 @@
 <head> 
   <style>
     #area {
-      background-color: purple;
-      color: pink;
+      background-color: blue;
+      color: green;
       font: italic 15pt Arial;
       height: 100px;
       width: 200px;
@@ -18,7 +18,7 @@
   <h1> Ola Mundo</h1>
   <p> resultado aqui</p>
   <p> aprendendo a usar o <strong>DOM</strong> em JS</p>
-  <div id="area" onmousetouchstart="clicar()" onmousetouchend="entrar()" onmousetouchmove="sair()">Clique aqui</div>
+  <div id="area" ontouchstart="clicar()" ontouchend="entrar()" ontouchmove="sair()">Clique aqui</div>
   <script>
     var a = document.getElementById ('area')
     function clicar(){
