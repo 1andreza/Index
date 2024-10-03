@@ -2,9 +2,37 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title> exercicio 2</title>
+   
   </head>
   <body>
-    <h1> atividade </h1>
-    <p> criar um site que pergunte se o usuario é brasileiro ou estrangeiro </p>
+   <!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Tabuada</title>
+</head>
+<body>
+<h1>Tabuada</h1>
+<script>
+var value;
+var numero;
+
+value = prompt("Digite o n° da tabuada que você deseja: ");
+
+numero = Number(value);
+
+if(numero<=0){
+value = prompt("O n° precisa ser maior do que 0. Digite novamente: ");
+numero = Number(value);
+}
+
+for(i=0;i<=10;i++){
+
+document.write(i+"x"+numero+" = "+i*numero+"<br>");
+
+}
+
+</script>
+</body>
+</html>
   </body>
