@@ -4,22 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin-top: 10px;
+        }
+    </style>
     <script>
         function coletarDados() {
-            let nome = prompt("Por favor, insira seu nome:");
+            const nomeInput = document.getElementById("nome");
+            const idadeInput = document.getElementById("idade");
+            const mensagem = document.getElementById("mensagem");
             let idade;
 
+            nomeInput.style.display = "none";
+            idadeInput.style.display = "none";
+            document.getElementById("submit").style.display = "none";
+            mensagem.innerHTML = "";
+
             do {
-                idade = parseInt(prompt("Por favor, insira sua idade:"));
-                if (idade < 18) {
-                    alert("Idade inválida. Você deve ser maior de 18 anos.");
-                }
+                nomeInput.style.display = "block";
+                idadeInput.style.display = "block";
+                document.getElementById("submit").style.display = "block";
+                return; // Saí da função para aguardar a entrada do usuário
             } while (idade < 18 || isNaN(idade));
 
-            alert(`Bem-vindo, ${nome}! Você tem ${idade} anos.`);
+            mensagem.innerHTML = `Bem-vindo, ${nomeInput.value}! Você tem ${idade} anos.`;
+        }
+
+        function validarIdade() {
+            const idadeInput = document.getElementById("idade").value;
+            const mensagem = document.getElementById("mensagem");
+            let idade = parseInt(idadeInput);
+
+            if (idade < 18 || isNaN(idade)) {
+                mensagem.innerHTML = "Idade inválida. Você deve ser maior de 18 anos.";
+            } else {
+                coletarDados();
+            }
         }
     </script>
 </head>
 <body onload="coletarDados()">
+    <h1>Cadastro de Usuário</h1>
+    <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Digite seu nome" />
+    </div>
+    <div>
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" placeholder="Digite sua idade" />
+    </div>
+    <button id="submit" onclick="validarIdade()">Enviar</button>
+    <div id="mensagem"></div>
 </body>
 </html>
