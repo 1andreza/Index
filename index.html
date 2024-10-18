@@ -1,25 +1,25 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content ="widht scale = 1.0">
-    <title>Cadastro de Usuário </title>
-    <body> 
-    <h1>Cadastro de usuário</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
     <script>
-     function coletarDados (){
-     let nome = prompt("Insira o seu nome:");
-     let idade ;
-     do {
-     idade= parseInt (prompt("Insira a sua idade:");
-     if (idade < 18){
-       alert ("idade inválida, deve ser maior que 18 anos");
-       }
-       } while (idade <18 || isanaN (idade));
-         alert ("Bem vindo, $ {nome}! Você tem ${idade} anos");
-         }
+        function coletarDados() {
+            let nome = prompt("Por favor, insira seu nome:");
+            let idade;
+
+            do {
+                idade = parseInt(prompt("Por favor, insira sua idade:"));
+                if (idade < 18) {
+                    alert("Idade inválida. Você deve ser maior de 18 anos.");
+                }
+            } while (idade < 18 || isNaN(idade));
+
+            alert(`Bem-vindo, ${nome}! Você tem ${idade} anos.`);
+        }
     </script>
-  </head>
+</head>
+<body onload="coletarDados()">
 </body>
 </html>
-  
